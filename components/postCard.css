@@ -1,0 +1,149 @@
+article.card-container{
+    padding:1.5rem 0;
+    max-width:44rem;
+    background:white;
+    border-radius: 1rem;
+    margin:1rem 0;
+    border:1px solid #ebedf1;
+}
+
+.about-container{
+    height:2.5rem;
+    padding:0 2rem;
+    font-size:.75rem;
+    margin-bottom:1rem;
+}
+
+article.card-container .about-container .avatar-img-container{ 
+    width:2.25rem;
+    height:2.25rem;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-right:.625rem;
+}
+article.card-container .about-container .avatar-img-container img{
+    width:100%;
+    height:100%;
+}
+.company-name{
+    color:grey;
+}
+.post-content-container{
+    position:relative;
+}
+.post-content-container .post-header{
+    font-weight: 600;
+    padding:0 2rem;
+    margin-bottom:.25rem;
+    margin-left:3rem;
+    line-height:1.2rem;
+    font-size:1rem;
+    max-width: 42rem;
+}
+.post-content-container .post-description{
+    font-size:1rem;
+    margin-bottom:1.5rem;
+    padding:0 2rem;
+    font-size:.875rem;
+    font-weight: 400;
+    margin-left:3rem;
+    max-width:40rem;
+    line-height:1.4rem;
+    color:#29253d;
+    word-break: break-word;
+} 
+.post-content-container .post-description a{
+    font-weight: 500;
+    text-decoration: underline;
+    margin-left:.2rem;
+    color:black;
+}
+.post-content-container .post-description p{
+    margin-bottom: .5rem;
+}
+.views-when-container{
+    display:flex;
+    align-items: center;
+    color:rgb(150,150,150);
+}
+.views-when-container .when{
+    margin-right:.2rem;
+}
+.fa-circle{
+    font-size:.2rem;
+    display: inline-block;
+    margin:.1rem;
+}
+.post-content-container .post-img{
+    width:100%;
+    margin-top:1rem;
+}
+.post-content-container .post-img img{
+    width:100%;
+    height:100%;
+}
+.post-content-container .post-content-main{
+    display:block;
+}
+
+.action-buttons-container{
+    padding:0 2rem;
+    margin-top:.75rem;
+}
+.like-button,.comment-button{
+    padding:.5rem 1rem;
+    transition: transform 125ms cubic-bezier(0.17, 0.89, 0.36, 2) 0s, -webkit-transform 125ms cubic-bezier(0.17, 0.89, 0.36, 2) 0s;
+    background:rgb(255, 255, 255);
+    border:1px solid rgb(214, 218, 224);
+    border-radius:100px;
+    color:rgb(120, 134, 153);
+    outline: none;
+}
+.like-button:hover,.comment-button:hover{
+    transform: scale(1.1);
+    transition: transform 125ms cubic-bezier(0.17, 0.89, 0.36, 2) 0s, -webkit-transform 125ms cubic-bezier(0.17, 0.89, 0.36, 2) 0s;
+}
+.like-button{
+    margin:0 .5rem 0 3rem;
+}
+.like-button.liked{
+    color:#f73859;
+}
+.like-button svg, .comment-button svg{
+    overflow: visible;
+    width:1rem;
+    height:1rem;
+}
+.like-button .likes-count, .comment-button .comment-count{
+    display: inline-block;
+    font-weight: 500;
+    margin-left:.25rem;
+    font-size:.75rem;
+    margin-top:.15rem;
+}
+@media (max-width:999px){
+    article.card-container{
+        border:none;
+        border-top:1px solid #ebedf1;
+        border-bottom:1px solid #ebedf1;
+        border-radius: 0;
+        width:100%;
+        margin:.5rem 0;
+    }
+    .about-container{
+        padding:0 1.5rem;
+    }
+    .post-content-container .post-header,.post-content-container .post-description{
+        margin-left:0;
+        padding:0 1.5rem;
+    }
+    .post-content-container .post-description{
+        width:100vw;
+    }
+    .action-buttons-container{
+        padding:0 1.5rem;
+    }
+    .like-button{
+        margin-left:0;
+    }
+}

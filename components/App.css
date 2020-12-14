@@ -1,0 +1,30 @@
+.main-container{
+    margin-left:17.5rem;
+    margin-top:12.375rem;
+    padding-top:4rem;
+}
+@media (max-width:999px){
+    .main-container{
+        margin-left:0;
+        padding-top:0;
+    }
+}
+.card-container{
+    width:100%;
+}
+.side-container{
+    display: block;
+    width:18.625rem;
+    background:white;
+    position:relative;
+    border-radius: 1rem;
+    margin:1rem 0;
+    margin-left:1.2rem;
+    height:80vh;
+    border:1px solid #ebedf1;
+}
+@media (max-width:999px){
+    .side-container{
+        display:none;
+    }
+}
