@@ -4,7 +4,7 @@ import "./Home.css";
 import Navbar from "./Navbar";
 const posts = [
   {
-    id: 1,
+    id: "Jumpstart x Nextplay Community Partnership: Supporting Black & LatinX Talent",
     companyImg:"https://jumpstart-static.s3.amazonaws.com/backend/__sized__/users/user/H31QWo8ORfKeBr5Ja_c__Q-thumbnail-200x200-70.jpeg",
     companyName: "Jumpstart",
     views: "14,322 Views",
@@ -15,7 +15,7 @@ const posts = [
     commentsCount:1
   },
   {
-    id: 2,
+    id: "Twitter and Apple are hiring remote workers + More remote jobs!",
     companyImg:"https://jumpstart-static.s3.amazonaws.com/backend/__sized__/users/user/N-xkB61XSfqqAcmYcnWPJA-thumbnail-200x200-70.jpg",
     companyName: "New Grades",
     views: "1000 Views",

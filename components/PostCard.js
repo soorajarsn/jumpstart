@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./postCard.css";
 import { Heart, HeartFill, Comment } from "./icons";
 function PostCard({ post }) {
@@ -8,10 +9,10 @@ function PostCard({ post }) {
   useEffect(() => {
     const hideContent = () => {
       setPostDescription(() => {
-        console.log("Set Description: ", post.postDescription.substr(0,150)+(post.postDescription.length > 151 && "..."))
-        return post.postDescription.substr(0,150)+(post.postDescription.length > 151 && "...")
+        console.log("Set Description: ", post.postDescription.substr(0, 150) + (post.postDescription.length > 151 && "..."));
+        return post.postDescription.substr(0, 150) + (post.postDescription.length > 151 && "...");
       });
-    }
+    };
     if (window.innerWidth < 700) {
       hideContent();
     }
@@ -49,10 +50,12 @@ function PostCard({ post }) {
             {(!liked && <Heart />) || <HeartFill />}
             {post.likesCount != 0 && <span className="likes-count">{post.likesCount + ((liked && 1) || 0)}</span>}
           </button>
-          <button className="comment-button flex link">
-            <Comment />
-            {post.commentsCount != 0 && <span className="comment-count">{post.commentsCount}</span>}
-          </button>
+          <Link to={"/comment/" + post.id}>
+            <button className="comment-button flex link">
+              <Comment />
+              {post.commentsCount != 0 && <span className="comment-count">{post.commentsCount}</span>}
+            </button>
+          </Link>
         </span>
       </div>
     </article>
