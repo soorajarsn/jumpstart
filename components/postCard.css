@@ -6,7 +6,6 @@ article.card-container{
     margin:1rem 0;
     border:1px solid #ebedf1;
 }
-
 .about-container{
     height:2.5rem;
     padding:0 2rem;
@@ -121,7 +120,7 @@ article.card-container .about-container .avatar-img-container img{
     font-size:.75rem;
     margin-top:.15rem;
 }
-@media (max-width:999px){
+@media (max-width:1024px){
     article.card-container{
         border:none;
         border-top:1px solid #ebedf1;
@@ -129,6 +128,7 @@ article.card-container .about-container .avatar-img-container img{
         border-radius: 0;
         width:100%;
         margin:.5rem 0;
+        max-width:unset;
     }
     .about-container{
         padding:0 1.5rem;
@@ -136,14 +136,21 @@ article.card-container .about-container .avatar-img-container img{
     .post-content-container .post-header,.post-content-container .post-description{
         margin-left:0;
         padding:0 1.5rem;
+        max-width:700px;
     }
     .post-content-container .post-description{
         width:100vw;
+        max-width:650px;
     }
     .action-buttons-container{
         padding:0 1.5rem;
     }
     .like-button{
         margin-left:0;
+    }
+}
+@media (min-width:1025px) and (max-width:1350px){
+    .card-container{
+        max-width:30rem;
     }
 }

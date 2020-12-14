@@ -3,12 +3,6 @@
     margin-top:12.375rem;
     padding-top:4rem;
 }
-@media (max-width:999px){
-    .main-container{
-        margin-left:0;
-        padding-top:0;
-    }
-}
 .card-container{
     width:100%;
 }
@@ -23,8 +17,23 @@
     height:80vh;
     border:1px solid #ebedf1;
 }
-@media (max-width:999px){
+@media (max-width:1024px){
+    .main-container{
+        margin-left:0;
+        padding-top:0;
+    }
+    .article-container{
+        width:100%;
+    } 
     .side-container{
         display:none;
+    }
+}
+@media (min-width:1025px) and (max-width:1350px){
+    .article-container{
+        margin-left:1rem;
+    }
+    .side-container{
+        margin-right:1rem;
     }
 }
