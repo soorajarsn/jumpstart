@@ -5,6 +5,7 @@ import { Heart, HeartFill, Comment } from "./icons";
 function PostCard({ post }) {
   const [liked, setLiked] = useState(false);
   const [postDescription, setPostDescription] = useState(post.postDescription);
+  console.log(post,postDescription);
   const createMarkup = html => ({ __html: html });
   useEffect(() => {
     const hideContent = () => {
@@ -35,9 +36,7 @@ function PostCard({ post }) {
         <span className="post-content-main">
           <h3 className="post-header">{post.postHeader}</h3>
           <div className="post-description">
-            {postDescription.split("\n").map((description, index) => (
-              <p key={index} dangerouslySetInnerHTML={createMarkup(description)}></p>
-            ))}
+            {postDescription && postDescription.split("\n").map((description, index) => <p key={index} dangerouslySetInnerHTML={createMarkup(description)}></p>)}
           </div>
           {post.postImg && (
             <div className="post-img">

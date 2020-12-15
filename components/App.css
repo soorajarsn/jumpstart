@@ -1,39 +1,39 @@
-.main-container{
-    margin-left:17.5rem;
-    margin-top:12.375rem;
-    padding-top:4rem;
+.main-container {
+  margin-left: 17.5rem;
+  margin-top: 12.375rem;
+  padding-top: 4rem;
 }
-.card-container{
-    width:100%;
+.card-container {
+  width: 100%;
 }
-.side-container{
-    display: block;
-    width:18.625rem;
-    background:white;
-    position:relative;
-    border-radius: 1rem;
-    margin:1rem 0;
-    margin-left:1.2rem;
-    height:80vh;
-    border:1px solid #ebedf1;
+.side-container {
+  display: block;
+  width: 18.625rem;
+  background: white;
+  position: relative;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  margin-left: 1.2rem;
+  height: 80vh;
+  border: 1px solid #ebedf1;
 }
-@media (max-width:1024px){
-    .main-container{
-        margin-left:0;
-        padding-top:0;
-    }
-    .article-container{
-        width:100%;
-    } 
-    .side-container{
-        display:none;
-    }
+@media (max-width: 1024px) {
+  .main-container {
+    margin-left: 0;
+    padding-top: 0;
+  }
+  .article-container {
+    width: 100%;
+  }
+  .side-container {
+    display: none;
+  }
 }
-@media (min-width:1025px) and (max-width:1350px){
-    .article-container{
-        margin-left:1rem;
-    }
-    .side-container{
-        margin-right:1rem;
-    }
+@media (min-width: 1025px) and (max-width: 1350px) {
+  .article-container {
+    margin-left: 1rem;
+  }
+  .side-container {
+    margin-right: 1rem;
+  }
 }

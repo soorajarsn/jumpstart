@@ -134,7 +134,6 @@ article.card-container .about-container .avatar-img-container img{
         padding:0 1.5rem;
     }
     .post-content-container .post-header,.post-content-container .post-description{
-        margin-left:0;
         padding:0 1.5rem;
         max-width:700px;
     }
@@ -152,5 +151,15 @@ article.card-container .about-container .avatar-img-container img{
 @media (min-width:1025px) and (max-width:1350px){
     .card-container{
         max-width:30rem;
+    }
+}
+@media (min-width:516px) and (max-width:800px){
+    .post-content-container .post-header,.post-content-container .post-description{
+        max-width: calc(100% - 3rem);
+    }
+}
+@media (max-width:515px){
+    .post-content-container .post-header,.post-content-container .post-description{
+        margin-left:0;
     }
 }
