@@ -64,12 +64,16 @@
   margin-left: 1.5rem;
   outline: none;
 }
-.comment-input-container input {
+.comment-input-container form {
   width: calc(100% - 4rem);
   background: #f8f8f8;
   border: none;
   padding: 0.9rem 1rem;
   font-size: 0.9rem;
+  height:100%;
+  position:relative;
+  top:-7.5rem;
+  background: #f8f8f8;
 }
 .comment-input-container input::placeholder {
   color: rgb(158, 155, 155);
