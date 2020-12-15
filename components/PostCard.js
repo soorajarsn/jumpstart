@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./postCard.css";
 import { Heart, HeartFill, Comment } from "./icons";
-function PostCard({ post }) {
+function PostCard({ post, isCommentaLink }) {
   const [liked, setLiked] = useState(false);
   const [postDescription, setPostDescription] = useState(post.postDescription);
-  console.log(post,postDescription);
+  console.log(post, postDescription);
   const createMarkup = html => ({ __html: html });
   useEffect(() => {
     const hideContent = () => {
@@ -49,12 +49,19 @@ function PostCard({ post }) {
             {(!liked && <Heart />) || <HeartFill />}
             {post.likesCount != 0 && <span className="likes-count">{post.likesCount + ((liked && 1) || 0)}</span>}
           </button>
-          <Link to={"/comment/" + post.id}>
+          {isCommentaLink ? (
+            <Link to={"/comment/" + post.id}>
+              <button className="comment-button flex link">
+                <Comment />
+                {post.commentsCount != 0 && <span className="comment-count">{post.commentsCount}</span>}
+              </button>
+            </Link>
+          ) : (
             <button className="comment-button flex link">
               <Comment />
               {post.commentsCount != 0 && <span className="comment-count">{post.commentsCount}</span>}
             </button>
-          </Link>
+          )}
         </span>
       </div>
     </article>

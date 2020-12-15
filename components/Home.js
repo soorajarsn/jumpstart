@@ -12,7 +12,7 @@ function Home() {
     <div className="main-container flex justify-center">
       <div className="article-container">
         {posts.map(post => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={post} isCommentaLink />
         ))}
       </div>
       <div className="side-container"></div>
