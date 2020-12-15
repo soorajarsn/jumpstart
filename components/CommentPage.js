@@ -3,8 +3,21 @@ import Navbar from "./Navbar";
 import "./CommentPage.css";
 import PostCard from "./PostCard";
 import { posts } from "./posts";
-import { BackButton, Heart, Comment } from "./icons";
+import { BackButton } from "./icons";
 import CommentComponent from "./Comment";
+const comments = [
+  {
+    img: "https://jumpstart-static.s3.amazonaws.com/backend/__sized__/users/user/DUBfKxJPSnuPM68qX_yblw-thumbnail-200x200-70.jpg",
+    username: "Andrew Nguyen",
+    description: "Love this so much!",
+    likesCount: 0,
+  },{
+    img: "https://jumpstart-static.s3.amazonaws.com/backend/__sized__/users/user/CojKDI0HTzis4Dy1TWnaMQ-thumbnail-200x200-70.jpg",
+    username: "Mubesh Mounange - Badimi",
+    description: "Thanks for posting this!",
+    likesCount: 1,
+  },
+];
 function CommentPage(props) {
   const { postId } = props.match.params;
   const [post, setPost] = useState({});
@@ -33,7 +46,9 @@ function CommentPage(props) {
         </div>
         {post.id && <PostCard post={post} />}
         <hr />
-        <CommentComponent />
+        {comments.map(comment => (
+          <CommentComponent comment={comment} />
+        ))}
         <div className="comment-input-container flex align-center justify-center">
           <input className="flex align-center" placeholder="Leave a comment" />
         </div>
