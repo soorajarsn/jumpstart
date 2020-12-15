@@ -1,45 +1,25 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
+import React from "react";
 import "./Comment.css";
-import PostCard from "./PostCard";
-import { posts } from "./posts";
-import { BackButton } from "./icons";
-function Comment(props) {
-  const { postId } = props.match.params;
-  const [post, setPost] = useState({});
-  //get the post(api call)
-  useEffect(() => {
-    const filtered = posts.filter(pst => pst.id == postId);
-    console.log(filtered);
-    setPost(filtered[0]);
-  }, []);
-  //when this page is opened, initial page is scrolled to point (0,0)
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  //goes back;
-  const pushBack = () => {
-    props.history.goBack();
-  };
+import { Heart, Comment } from "./icons";
+function CommentComponent(props) {
   return (
-    <div className="main-container comment-page flex justify-center">
-      <div className="article-container flex align-center flex-column">
-        <div className="back-button-container flex align-center justify-center">
-          <button className="flex align-center link" onClick={pushBack}>
-            <BackButton />
-            Back
-          </button>
+    <div className="comments-container">
+      <div className="comment flex">
+        <div className="profile-img">
+          <img src="https://jumpstart-static.s3.amazonaws.com/backend/__sized__/users/user/DUBfKxJPSnuPM68qX_yblw-thumbnail-200x200-70.jpg" alt="" />
         </div>
-        {post.id && <PostCard post={post} />}
-        <hr />
-        <div className="comment-input-container flex align-center justify-center">
-          <input className="flex align-center" placeholder="Leave a comment" />
+        <div className="comment-body">
+          <div className="username">Andrew Nguyen</div>
+          <div className="description">Love this thank you so much!</div>
+          <div className="action-buttons flex align-center">
+            <Heart />
+            <i className="fas fa-circle"></i>
+            <Comment />
+          </div>
         </div>
       </div>
-      <div className="side-container"></div>
-      <Navbar />
     </div>
   );
 }
 
-export default Comment;
+export default CommentComponent;
