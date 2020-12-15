@@ -5,7 +5,8 @@
   flex-grow: 1;
   background: white;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1);
-  margin-bottom: 3rem;
+  padding-bottom: 4.5rem;
+  min-height:100vh;
 }
 @media (max-width: 1350px) and (min-width: 1025px) {
   .comment-page .article-container {
@@ -15,6 +16,8 @@
 .comment-page article.card-container {
   border: none;
   max-width: 768px;
+  margin-bottom:0;
+  padding-bottom:0;
 }
 .comment-page article.card-container .post-content-container .post-header {
   max-width: 720px;
@@ -88,6 +91,14 @@
   .comment-page .article-container {
     margin-top: 4rem;
   }
+}
+.comment-page hr{
+    width:100%;
+    border-top:1px solid #ebedf1;
+    /* border-bottom:1px solid #ebedf1; */
+    border-bottom:0;
+    height:0;
+    margin-top:1rem;
 }
 @media (min-width: 1025px) and (max-width: 1399px) {
   .comment-page .side-container {

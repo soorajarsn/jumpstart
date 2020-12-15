@@ -23,7 +23,7 @@ function Comment(props) {
   };
   return (
     <div className="main-container comment-page flex justify-center">
-      <div className="article-container center flex-column">
+      <div className="article-container flex align-center flex-column">
         <div className="back-button-container flex align-center justify-center">
           <button className="flex align-center link" onClick={pushBack}>
             <BackButton />
@@ -31,6 +31,7 @@ function Comment(props) {
           </button>
         </div>
         {post.id && <PostCard post={post} />}
+        <hr />
         <div className="comment-input-container flex align-center justify-center">
           <input className="flex align-center" placeholder="Leave a comment" />
         </div>
