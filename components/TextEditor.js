@@ -27,9 +27,29 @@ class Editors extends Component {
       //   props.setMax(true);
       // }
     };
-  }
+    
+    this.onItalicClick= () =>{
+      this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
+    };
+    
+  this.onBoldClick= ()=>{
+    console.log(this)
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
+  };
 
-  handleKeyCommand(command)  {
+  this.onUnderlineClick=() =>{
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE"));
+  };
+
+  this.onULClick =  () =>{
+    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "unordered-list-item"));
+  };
+
+  this.onOLClick = () =>{
+    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "ordered-list-item"));
+  };
+
+  this.handleKeyCommand=(command) => {
     const newState = RichUtils.handleKeyCommand(this.state.editorState, command);
     if (newState) {
       this.onChange(newState);
@@ -38,25 +58,13 @@ class Editors extends Component {
     return "not-handled";
   };
 
-  onItalicClick () {
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
-  };
+  }
 
-  onBoldClick(){
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
-  };
+ 
+//  onItalicClick () {
+//     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
+//   };
 
-  onUnderlineClick() {
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE"));
-  };
-
-  onULClick  () {
-    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "unordered-list-item"));
-  };
-
-  onOLClick  () {
-    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "ordered-list-item"));
-  };
 
   render() {
     return (

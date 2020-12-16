@@ -25,7 +25,7 @@ function CommentPage(props) {
   const { postId } = props.match.params;
   const [post, setPost] = useState({});
   const [comment, setComment] = useState("");
-  const [max, setMax] = useState(false);
+  const [max, setMax] = useState(null);
   //get the post(api call)
   useEffect(() => {
     const filtered = posts.filter(pst => pst.id == postId);
