@@ -1,11 +1,12 @@
 .editor{
     /* height:100%; */
     width:100%;
+    background:white;
 }
 .editor > .DraftEditor-root {
     margin-top: 2px !important;
     height: 10rem !important;
-    width: calc(100% - 30px)!important;
+    width: calc(100% - 2px)!important;
     font-size: .9rem !important;
     resize: none !important;
     caret-color: #2dc5a1;
@@ -19,9 +20,27 @@
     overflow-y: auto;
     transition: border 0.2s ease-in;
     background:#f8f8f8!important;
+    /* reset the below things to above when the editor will be in focus state */
+    height:3rem !important;
+    transition: height 0.2s ease-out;
+}
+.focus .editor > .DraftEditor-root{
+    height:10rem!important;
 }
 .DraftEditor-editorContainer{
-    height:9.1rem!important;
+    height:8.1rem!important;
+    /* reset the below things to above when the editor will be focused */
+    height:0!important;
+}
+.focus .editor .DraftEditor-editorContainer{
+    height:8.1rem !important;
+}
+.DraftEditor-editorContainer div{
+    display:none;
+    /* remove this when editor in focus */
+}
+.focus .editor .DraftEditor-editorContainer div{
+    display:block;
 }
 .public-DraftEditor-content{
     background:#f8f8f8!important;
@@ -32,9 +51,12 @@
 .public-DraftEditorPlaceholder-root{
     width:calc(100% - 14px)!important;
 }
+.DraftEditor-editorContainer{
+    margin-top:1rem!important;
+}
 
 .editor__buttons {
-    width: calc(100% - 30px);
+    width: 180px;
     background: #f6f9fc;
     border: 1px solid #d6e0e1;
     border-radius: 0 0 .3125rem .3125rem;
@@ -43,20 +65,50 @@
     border-top: 0px;
     display: flex;
     align-items: center;
+    margin-top:.5rem;
+    /* reset these to above when the editor will be in focus */
+    height:0;
+    overflow:hidden;
+    padding:0;
+    border:none;
+    background-color: #898e98;
+    border-radius:8px;
+}
+.editor .buttons-container{
+    display:none;
+}
+.focus .editor .buttons-container{
+    display:flex;
+    justify-content: space-between;
+}
+.submit-button button{
+    color:white;
+    background: #1a73e8;
+    padding:.625rem .75rem;
+    opacity: .4;
+    margin-top:.3rem;
+    font-size:.975rem;
+    font-weight: 600;
+    border:none;
+    height:2.5rem;
+    border-radius: .3125rem;
+}
+.focus .editor .editor__buttons{
+    height: auto;
+    overflow: visible;
+    padding:.25rem .725rem;
+    border:1px solid #d6e0e1;
 }
 
-.editor__buttons > div > .MuiSvgIcon-root  {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-right: .5rem;
-    color: #5a8a99 !important;
+.editor__buttons > div.icons > svg{
+    color: white !important;
     cursor: pointer;
-    padding: 5px;
+    padding:0;
     transition: all 0.3s ease-in;
 }
 
 .editor__buttons > div > .MuiSvgIcon-root:hover {
-    background-color: #ddd;
+    background-color: white;;
     border-radius: 50px;
 }
 
@@ -71,28 +123,28 @@
 }
 
 .icons:hover {
-    background-color: #ddd;
+    background-color: #575e6d;
     border-radius: 50px;
 }
 
 @media(max-width: 414px) {
-    .editor > .DraftEditor-root {
+    /* .editor > .DraftEditor-root {
         width: 92.5% !important;
     }
 
     .editor__buttons {
         width: 94.2%;
         margin-left: -1px;
-    }
+    } */
 }
 
 @media(max-width: 360px) {
     .editor > .DraftEditor-root {
-        width: 91% !important;
-        height: 220px !important;
+        /* width: 91% !important; */
+        /* height: 220px !important;  allow when focused*/
     }
 
-    .editor__buttons {
+    /* .editor__buttons {
         width: 93.1%;
-    }
+    } */
 }

@@ -7,7 +7,7 @@ import FormatItalicRoundedIcon from "@material-ui/icons/FormatItalicRounded";
 import FormatUnderlinedSharpIcon from "@material-ui/icons/FormatUnderlinedSharp";
 // Font awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faListOl } from "@fortawesome/free-solid-svg-icons";
+import { faList, faListOl, faBold, faUnderline, faItalic } from "@fortawesome/free-solid-svg-icons";
 
 class Editors extends Component {
   constructor(props) {
@@ -27,44 +27,41 @@ class Editors extends Component {
       //   props.setMax(true);
       // }
     };
-    
-    this.onItalicClick= () =>{
+
+    this.onItalicClick = () => {
       this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
     };
-    
-  this.onBoldClick= ()=>{
-    console.log(this)
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
-  };
 
-  this.onUnderlineClick=() =>{
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE"));
-  };
+    this.onBoldClick = () => {
+      console.log(this);
+      this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
+    };
 
-  this.onULClick =  () =>{
-    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "unordered-list-item"));
-  };
+    this.onUnderlineClick = () => {
+      this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE"));
+    };
 
-  this.onOLClick = () =>{
-    this.onChange(RichUtils.toggleBlockType(this.state.editorState, "ordered-list-item"));
-  };
+    this.onULClick = () => {
+      this.onChange(RichUtils.toggleBlockType(this.state.editorState, "unordered-list-item"));
+    };
 
-  this.handleKeyCommand=(command) => {
-    const newState = RichUtils.handleKeyCommand(this.state.editorState, command);
-    if (newState) {
-      this.onChange(newState);
-      return "handled";
-    }
-    return "not-handled";
-  };
+    this.onOLClick = () => {
+      this.onChange(RichUtils.toggleBlockType(this.state.editorState, "ordered-list-item"));
+    };
 
+    this.handleKeyCommand = command => {
+      const newState = RichUtils.handleKeyCommand(this.state.editorState, command);
+      if (newState) {
+        this.onChange(newState);
+        return "handled";
+      }
+      return "not-handled";
+    };
   }
 
- 
-//  onItalicClick () {
-//     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
-//   };
-
+  //  onItalicClick () {
+  //     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC"));
+  //   };
 
   render() {
     return (
@@ -77,21 +74,26 @@ class Editors extends Component {
           handleKeyCommand={this.handleKeyCommand}
           className="editor__textarea scroll"
         />
-        <div className="editor__buttons">
-          <div onClick={this.onBoldClick}>
-            <FormatBoldRoundedIcon />
+        <div className="buttons-container flex align-center">
+          <div className="editor__buttons">
+            <div  className="icons center" onClick={this.onBoldClick}>
+            <FontAwesomeIcon icon={faBold} size="1x" />
+            </div>
+            <div  className="icons center" onClick={this.onItalicClick}>
+            <FontAwesomeIcon icon={faItalic} size="1x" />
+            </div>
+            <div  className="icons center" onClick={this.onUnderlineClick}>
+            <FontAwesomeIcon icon={faUnderline} size="1x" />
+            </div>
+            <div className="icons center" onClick={this.onULClick}>
+              <FontAwesomeIcon icon={faList} size="1x" />
+            </div>
+            <div className="icons center" onClick={this.onOLClick}>
+              <FontAwesomeIcon icon={faListOl} size="1x" />
+            </div>
           </div>
-          <div onClick={this.onItalicClick}>
-            <FormatItalicRoundedIcon />
-          </div>
-          <div onClick={this.onUnderlineClick}>
-            <FormatUnderlinedSharpIcon />
-          </div>
-          <div className="icons" onClick={this.onULClick}>
-            <FontAwesomeIcon icon={faList} size="1x" />
-          </div>
-          <div className="icons" onClick={this.onOLClick}>
-            <FontAwesomeIcon icon={faListOl} size="1x" />
+          <div className="submit-button">
+            <button>Comment</button>
           </div>
         </div>
       </div>

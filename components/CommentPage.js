@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import "./CommentPage.css";
 import PostCard from "./PostCard";
 import { posts } from "./posts";
-import { BackButton } from "./icons";
+import { BackButton, ArrowDown, Times } from "./icons";
 import CommentComponent from "./Comment";
 import TextEditor from "./TextEditor";
 import { Formik } from "formik";
@@ -29,7 +29,6 @@ function CommentPage(props) {
   //get the post(api call)
   useEffect(() => {
     const filtered = posts.filter(pst => pst.id == postId);
-    console.log(filtered);
     setPost(filtered[0]);
   }, []);
   //when this page is opened, initial page is scrolled to point (0,0)
@@ -39,6 +38,13 @@ function CommentPage(props) {
   //goes back;
   const pushBack = () => {
     props.history.goBack();
+  };
+  const focusEditor = event => {
+    if(!event.target.classList.contains('remover'))
+      document.querySelector(".comment-input-container").classList.add("focus");
+  };
+  const closeEditor = event => {
+    document.querySelector(".comment-input-container").classList.remove("focus");
   };
   return (
     <div className="main-container comment-page flex justify-center">
@@ -52,9 +58,19 @@ function CommentPage(props) {
         {post.id && <PostCard post={post} />}
         <hr />
         {comments.map(comment => (
-          <CommentComponent comment={comment} />
+          <CommentComponent key={comment.description} comment={comment} />
         ))}
-        <div className="comment-input-container flex align-center justify-center">
+        <div className="comment-input-container flex align-center justify-center" onClick={focusEditor}>
+          <div className="profile">
+            <img src="https://images.jumpstart.me/frontend/icons/avatar.svg" alt="" />
+            <span>Sooraj Shukla</span>
+            <span>
+              <ArrowDown />
+            </span>
+          </div>
+          <button className="close-button link remover" onClick={closeEditor}>
+            <Times />
+          </button>
           <Formik
             initialValues={{
               comment: comment,

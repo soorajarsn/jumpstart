@@ -53,6 +53,10 @@
   top: unset;
   bottom: 0.1rem;
   height: 5rem;
+  transition: height .2s ease-out;
+}
+.comment-input-container.focus{
+  height:17rem;
 }
 .back-button-container button {
   background: none;
@@ -66,14 +70,59 @@
 }
 .comment-input-container form {
   width: calc(100% - 4rem);
-  background: #f8f8f8;
   border: none;
-  padding: 0.9rem 1rem;
   font-size: 0.9rem;
-  height:100%;
   position:relative;
-  top:-7.5rem;
   background: #f8f8f8;
+  top:.7rem;
+}
+.comment-input-container.focus form{
+  top:1.7rem;
+}
+.comment-input-container .profile{
+  display: none;
+}
+.comment-input-container .profile img{
+  width:1.5rem;
+  height:1.5rem;
+  border-radius: 100%;
+}
+.comment-input-container.comment-input-container.focus .profile{
+  display:flex;
+  align-items: center;
+  font-size:.875rem;
+  font-weight: 500;
+  position: absolute;
+  color:black;
+  top:1rem;
+  left:1.8rem;
+}
+.comment-input-container.focus .profile span{
+  display: inline-block;
+  margin-left:.3rem;
+}
+.comment-input-container.focus .profile span svg{
+  height:.75rem;
+  width:.75rem;
+}
+.comment-input-container.focus button.close-button{
+  display:block;
+  position: absolute;
+  top:1rem;
+  right:1.7rem;
+}
+button.close-button{
+  display:none;
+  background:transparent;
+  color:black;
+  border:none;
+  font-size:.7rem;
+  outline:none;
+}
+button.close-button svg{
+  width:1.5rem;
+  height:1.5rem;
+  color:#788699;
 }
 .comment-input-container input::placeholder {
   color: rgb(158, 155, 155);

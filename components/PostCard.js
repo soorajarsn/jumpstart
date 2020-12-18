@@ -5,12 +5,10 @@ import { Heart, HeartFill, Comment } from "./icons";
 function PostCard({ post, isCommentaLink }) {
   const [liked, setLiked] = useState(false);
   const [postDescription, setPostDescription] = useState(post.postDescription);
-  console.log(post, postDescription);
   const createMarkup = html => ({ __html: html });
   useEffect(() => {
     const hideContent = () => {
       setPostDescription(() => {
-        console.log("Set Description: ", post.postDescription.substr(0, 150) + (post.postDescription.length > 151 && "..."));
         return post.postDescription.substr(0, 150) + (post.postDescription.length > 151 && "...");
       });
     };

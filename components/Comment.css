@@ -1,50 +1,60 @@
-.comment-page .comments-container{
-    max-width:768px;
-    width:100%;
-    margin-bottom:3rem;
+.comment-page .comments-container {
+  max-width: 768px;
+  width: 100%;
+  margin-bottom: 3rem;
 }
-.comment .profile-img{
-    overflow: hidden;
-    border-radius: 100%;
-    width:2rem;
-    height:2rem;
-    margin-right: 1rem;
+@media (max-width: 800px) {
+  .comment-page .comments-container {
+    padding: 0 1.5rem;
+  }
 }
-.comment .profile-img img{
-    width:100%;
-    height: 100%;
+@media (min-width:1025px) and (max-width:1475px){
+    .comment-page .comments-container{
+        padding:0 1.5rem;
+    }
 }
-.comment .comment-body{
-    background:#f8f8f8;
-    padding:.75rem;
-    border-radius: .5rem;
-    width: calc(100% - 2rem);
+.comment .profile-img {
+  overflow: hidden;
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
 }
-.comment .comment-body .description{
-    margin-bottom:1rem;
+.comment .profile-img img {
+  width: 100%;
+  height: 100%;
 }
-.comment .action-buttons svg{
-    overflow: visible;
-    width:.8rem;
-    height:.8rem;
-    color:#8592a2;
-    margin-bottom:0;
+.comment .comment-body {
+  background: #f8f8f8;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: calc(100% - 2rem);
 }
-.comment .action-buttons .fa-circle{
-    font-size:.15rem;
-    color:#a1a7af;
-    height:0;
-    margin:0 .8rem;
+.comment .comment-body .description {
+  margin-bottom: 1rem;
 }
-.comment .comment-body .username{
-    font-weight: 600;
-    font-size:.85rem;
-    color:#8592a2;
-    margin-bottom:1rem;
+.comment .action-buttons svg {
+  overflow: visible;
+  width: 0.8rem;
+  height: 0.8rem;
+  color: #8592a2;
+  margin-bottom: 0;
 }
-.comment .action-buttons .likes{
-    font-size:.75rem;
-    margin-left:.3rem;
-    margin-top:.1rem;
-    color:#8592a2;
+.comment .action-buttons .fa-circle {
+  font-size: 0.15rem;
+  color: #a1a7af;
+  height: 0;
+  margin: 0 0.8rem;
+}
+.comment .comment-body .username {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #8592a2;
+  margin-bottom: 1rem;
+}
+.comment .action-buttons .likes {
+  font-size: 0.75rem;
+  margin-left: 0.3rem;
+  margin-top: 0.1rem;
+  color: #8592a2;
 }
